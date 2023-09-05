@@ -1,22 +1,23 @@
-import java.lang.Math;
 public class Recursion {
- 
+/*
 	static int subsum(int n) {
-        if (n == 0) {
-            return 0;  // The sum for 0 is 0
-        } else {
-            return n * (int) Math.pow(-1, n+1) + subsum(n-1);
+		//Ex1. Complete the content of this method 
+        if (n == 1) {
+          return 1;
+        }
+        else {
+          return (int) ((Math.pow(-1, n - 1) * n) + subsum (n - 1));
         }
     }
-    
-    
+*/
 	static int sumDigit(int n) {
-		
-        if(n == 0 ){
-            return 0;
+		//Ex2. Complete the content of this method 
+        if (n < 10) {
+          return n;
         }
-        return n%10 + sumDigit((int) Math.floor(n/10));
-        
+     else {
+          return (n % 10) + sumDigit (Math.floorDiv(n, 10));
+     }
         
     }
     
@@ -24,19 +25,20 @@ public class Recursion {
           
 
             // Test Uncomment these lines below to test your subsum code
-           
-                // System.out.println("Calculating subsum(10):");
-		        // System.out.println("Your answer is "+subsum(10));
-                // System.out.println("The correct answer is -5");
-                // System.out.println("-----------------------"); 
-           
+/*
+               System.out.println("Calculating subsum(10):");
+		     System.out.println("Your answer is "+subsum(10));
+               System.out.println("The correct answer is -5");
+               System.out.println("-----------------------"); 
+*/
+              
 
             // Uncomment these lines below to test your sumDigit code
-            // /* 
-                 System.out.println("sumDigit(123456789)");
-		 System.out.println("Your answer is "+ sumDigit(123456789));
-                 System.out.println("The correct answer is 45");
-            // */
+            
+               System.out.println("sumDigit(123456789)");
+		     System.out.println("Your answer is "+ sumDigit(123456789));
+               System.out.println("The correct answer is 45");
+            
 	}
     
 }
