@@ -3,24 +3,11 @@
  * provides methods for adding, removing, and accessing elements in the array.
  */
 public class Array {
-	/**
-	 * The maximum size of the array.
-	 */
 	final int size;
-
-	/**
-	 * The underlying array to store elements.
-	 */
 	int[] A;
-
-	/**
-	 * The current number of elements in the array.
-	 */
 	int load = 0;
-
-	/**
+	/*
 	 * Constructs a new Array with the specified maximum size.
-	 *
 	 * @param n The maximum size of the array.
 	 */
 	Array(int n) {
@@ -28,11 +15,10 @@ public class Array {
 		A = new int[size];
 	}
 
-	/**
+	/*
 	 * Adds an element to the beginning of the array. In summary, it start from the
 	 * last element and shift elements to the right. Then, it increment the load
 	 * count, and place the new element at the beginning.
-	 * 
 	 * @param e The element to be added.
 	 */
 	void addFirst(int e) { // Ex3 a
@@ -46,9 +32,8 @@ public class Array {
 		A = B;
 	}
 
-	/**
+	/*
 	 * Adds an element to the end of the array.
-	 *
 	 * @param e The element to add.
 	 */
 	void addLast(int e) { // Ex3 b
@@ -56,9 +41,8 @@ public class Array {
 		load += 1;
 	}
 
-	/**
+	/*
 	 * Adds an element at a specified index in the array.
-	 *
 	 * @param e     The element to add.
 	 * @param index The index at which to add the element.
 	 */
@@ -76,9 +60,8 @@ public class Array {
 		A = B;
 	}
 
-	/**
+	/*
 	 * Removes the first element from the array and returns it.
-	 *
 	 * @return The removed element, or 0 if the array is empty.
 	 */
 	void removeFirst() { // Ex4 a
@@ -91,9 +74,8 @@ public class Array {
 		A = B;
 	}
 
-	/**
+	/*
 	 * Removes the last element from the array and returns it.
-	 *
 	 * @return The removed element, or 0 if the array is empty.
 	 */
 	void removeLast() { // Ex4 b
@@ -101,9 +83,8 @@ public class Array {
 		load -= 1;
 	}
 
-	/**
+	/*
 	 * Removes an element at a specified index from the array and returns it.
-	 *
 	 * @param index The index of the element to remove.
 	 * @return The removed element, or 0 if the array is empty.
 	 */
@@ -121,9 +102,8 @@ public class Array {
 		A = B;
 	}
 
-	/**
+	/*
 	 * Gets the element at a specified index in the array.
-	 *
 	 * @param index The index of the element to retrieve.
 	 * @return The element at the specified index.
 	 */
@@ -131,9 +111,8 @@ public class Array {
 		return A[index];
 	}
 
-	/**
+	/*
 	 * Sets the element at a specified index in the array to a new value.
-	 *
 	 * @param val   The new value to set.
 	 * @param index The index at which to set the new value.
 	 */
@@ -141,7 +120,7 @@ public class Array {
 		A[index] = val;
 	}
 
-	/**
+	/*
 	 * Prints the elements in the array and the current load.
 	 */
 	void printArray() {
