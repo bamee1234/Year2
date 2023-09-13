@@ -1,31 +1,11 @@
 public class Sorting {
-	/**
-	 * Swaps two elements in an integer array.
-	 *
-	 * This method swaps the elements at the specified positions (i and j) within
-	 * the given integer array (A). It exchanges the values at A[i] and A[j] by
-	 * temporarily storing the value of A[i] in a temporary variable, then assigning
-	 * the value of A[j] to A[i], and finally assigning the temporary value to A[j].
-	 *
-	 * @param A The integer array in which elements are to be swapped.
-	 * @param i The index of the first element to be swapped.
-	 * @param j The index of the second element to be swapped.
-	 */
+
 	static void swap(int[] A, int i, int j) {
 		int temp = A[i];
 		A[i] = A[j];
 		A[j] = temp;
 	}
 
-	/**
-	 * Prints the elements of an integer array.
-	 *
-	 * This method prints the elements of the given integer array (A) to the
-	 * standard output stream, separated by spaces, followed by a newline character
-	 * to create a visually formatted list of the array's contents.
-	 *
-	 * @param A The integer array to be printed.
-	 */
 	static void printArray(int[] A) {
 		for (int i = 0; i < A.length; i++) {
 			System.out.print(A[i] + " ");
@@ -33,22 +13,6 @@ public class Sorting {
 		System.out.println();
 	}
 
-	/**
-	 * Finds the index of the smallest element within a specified range of an
-	 * integer array.
-	 *
-	 * This method searches for the index of the smallest element within the
-	 * subarray defined by the given start and end indices in the provided integer
-	 * array (A). It iterates through the elements within the specified range and
-	 * maintains the index of the smallest element encountered. The index of the
-	 * smallest element is returned as the result.
-	 *
-	 * @param A     The integer array in which the smallest element is to be found.
-	 * @param start The starting index of the subarray to search.
-	 * @param end   The ending index of the subarray to search.
-	 * @return The index of the smallest element within the specified subarray
-	 *         range.
-	 */
 	static int findIndexSmallest(int[] A, int start, int end) {
 		int minIndex = start; // Index of smallest remaining value.
 		for (int j = start; j < end; j++) {
@@ -58,17 +22,6 @@ public class Sorting {
 		return minIndex;
 	}
 
-	/**
-	 * Sorts an integer array using the Selection Sort algorithm.
-	 *
-	 * This method sorts the given integer array (A) in ascending order using the
-	 * Selection Sort algorithm. It iteratively selects the smallest element from
-	 * the unsorted part of the array and swaps it with the element at the beginning
-	 * of the unsorted part, effectively partitioning the array into sorted and
-	 * unsorted sections.
-	 *
-	 * @param A The integer array to be sorted.
-	 */
 	static void SelectionSort(int[] A) { // Ex 1a Complete the method SelectionSort
 		for (int i = 0; i < A.length - 1; i++) {
 			int minIndex = i; // Index of smallest remaining value.
@@ -81,16 +34,6 @@ public class Sorting {
 		}
 	}
 
-	/**
-	 * Sorts an integer array using the Insertion Sort algorithm.
-	 *
-	 * This method sorts the given integer array (A) in ascending order using the
-	 * Insertion Sort algorithm. It iteratively builds a sorted subarray by shifting
-	 * elements one at a time and inserting them into their correct positions within
-	 * the sorted part of the array.
-	 *
-	 * @param A The integer array to be sorted.
-	 */
 	static void InsertionSort(int[] A) { // Ex 1b Complete the method InsertionSort
 		for (int i = 1; i < A.length; i++) {
 			int temp = A[i];
@@ -102,15 +45,6 @@ public class Sorting {
 		}
 	}
 
-	/**
-	 * Sorts an integer array using the Merge Sort algorithm recursively.
-	 *
-	 * This method sorts the given integer array (A) in ascending order using the
-	 * Merge Sort algorithm. It recursively divides the array into smaller
-	 * subarrays, sorts them individually, and then merges them back together.
-	 *
-	 * @param A The integer array to be sorted.
-	 */
 	private static void RecursiveMergeSort(int[] A) { // Ex3 Complete method RecursiveMergeSort
 		int inputLength = A.length;
 		if (inputLength < 2)
@@ -126,29 +60,13 @@ public class Sorting {
 		for (int i = midIndex; i < inputLength; i++) {
 			rightHalf[i - midIndex] = A[i];
 		}
-		// Complete this method.
-		// Call RecursiveMergeSort for leftHalf, rightHalf, and merge them. Note the
-		// method merge is provided.
 
 		RecursiveMergeSort(leftHalf);
 		RecursiveMergeSort(rightHalf);
 		merge(A, leftHalf, rightHalf);
 
 	}
-
-	/**
-	 * Merges two sorted integer arrays into one sorted array.
-	 *
-	 * This method merges two sorted integer arrays, `leftHalf` and `rightHalf`,
-	 * into a single sorted array `A`. It iterates through both input arrays,
-	 * comparing elements and placing them in ascending order in the resulting
-	 * merged array.
-	 *
-	 * @param A         The target integer array where the sorted elements will be
-	 *                  stored.
-	 * @param leftHalf  The first sorted integer array to be merged.
-	 * @param rightHalf The second sorted integer array to be merged.
-	 */
+	
 	private static void merge(int[] A, int[] leftHalf, int[] rightHalf) {
 		int leftSize = leftHalf.length;
 		int rightSize = rightHalf.length;
@@ -165,13 +83,11 @@ public class Sorting {
 				k++;
 			}
 		}
-		// Copy any remaining elements from the leftHalf array, if any.
 		while (i < leftSize) {
 			A[k] = leftHalf[i];
 			i++;
 			k++;
 		}
-		// Copy any remaining elements from the leftHalf array, if any.
 		while (j < rightSize) {
 			A[k] = rightHalf[j];
 			j++;
@@ -179,17 +95,6 @@ public class Sorting {
 		}
 	}
 
-	/**
-	 * Sorts an integer subarray using the Quick Sort algorithm recursively.
-	 *
-	 * This method sorts a subarray of the given integer array (A) in ascending
-	 * order using the Quick Sort algorithm. It recursively partitions the array
-	 * into smaller subarrays, and then sorts them individually.
-	 *
-	 * @param A     The integer array containing the subarray to be sorted.
-	 * @param start The starting index of the subarray to be sorted.
-	 * @param end   The ending index of the subarray to be sorted.
-	 */
 	static void RecursiveQuickSort(int[] A, int start, int end) { // Ex4. Complete the method RecursiveQuickSort
 		if (start < end) {
 			int pivot = A[end];
@@ -214,8 +119,6 @@ public class Sorting {
 			for (int i = 0; i < r_count; i++) {
 				A[l_count + start + i + 1] = R[i];
 			}
-			// Complete this method.
-			// Call itself for sorting the leftHalf and the rightHalf
 			RecursiveQuickSort(A, start, start + l_count - 1);
 			RecursiveQuickSort(A, start + l_count + 1, end);
 		}
