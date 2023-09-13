@@ -49,9 +49,6 @@ public class HashTable {
 	}
 
 	//Complete the 5th exercise method Search
-	// Search for the address of the key
-	//Searching for a key is similar to filling in data to Hash
-	//Most code can be cut and pasted from the method fillHashTable
 
 	void search(int key) {
 		int originalAddress = 0;
