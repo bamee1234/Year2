@@ -3,7 +3,6 @@ public class SList<T> {
 	Node<T> first;
 	Node<T> last;
 
-	
 	SList() {
 		size = 0;
 		first = null;
