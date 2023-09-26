@@ -4,7 +4,6 @@
  */
 public class SListExtension {
 
-    
     /**
      * Prints the elements of a singly linked list vertically.
      *
