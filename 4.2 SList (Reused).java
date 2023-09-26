@@ -2,6 +2,7 @@ public class SList<T> {
 	int size;
 	Node<T> first;
 	Node<T> last;
+
 	
 	SList() {
 		size = 0;
