@@ -1,5 +1,4 @@
 public class Recursion {
-	
 	static int subsum(int n) {
 		//Ex1. Complete the content of this method 
         if (n == 1) {
@@ -17,11 +16,9 @@ public class Recursion {
      else {
           return (n % 10) + sumDigit (Math.floorDiv(n, 10));
      }
-        
     }
 	
 	public static void main(String[] args) {
-
 		System.out.println("Calculating subsum(10):");
 		System.out.println("Your answer is "+subsum(10));
 		System.out.println("The correct answer is -5");
@@ -29,8 +26,7 @@ public class Recursion {
               
 		System.out.println("sumDigit(123456789)");
 		System.out.println("Your answer is "+ sumDigit(123456789));
-		System.out.println("The correct answer is 45");
-            
+		System.out.println("The correct answer is 45");    
 	}
-    
+	
 }
