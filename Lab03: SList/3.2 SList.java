@@ -53,11 +53,15 @@ public class SList<T> {
 	void addLast(T element) {
 		// Ex.1 complete the method
 		Node<T> newNode = new Node<T>(element);
-		last.next = newNode;
-		last = newNode;
+		if (last == null) {
+			last = newNode;
+			first = newNode;
+		}
+		else {
+			last.next = newNode;
+			last = newNode;
+		}
 		size++;
-		if (first == null)
-			first = last;
 	}
 
 	/**
@@ -152,7 +156,7 @@ public class SList<T> {
 		}
 		else {
 			Node<T> temp = first;
-			for (int i = 0; i < index - 2; i ++) {
+			for (int i = 0; i < index - 1; i ++) {
 				temp = temp.next;
 			}
 			Node<T> removed = temp.next;
